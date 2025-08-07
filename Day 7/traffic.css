@@ -1,0 +1,34 @@
+body{
+    background: rgb(114,138,138);
+    text-align: center;
+    color:rgb(233,237240);
+}
+.traffic{
+    height:300px;
+    background: black;
+    width:120px;
+    border-radius: 20px;
+    margin: 0 auto;
+    padding-top: 20px;
+
+}
+.light{
+    /* background: white; */
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    margin: auto;
+    margin-top: 5px;
+    padding: 10px;
+
+
+}
+.red.active{
+    background: red;
+}
+.yellow.active{
+    background: yellow;
+}
+.green.active{
+    background: green;
+}

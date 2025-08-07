@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <Style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        #main {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            
+        }
+        #img img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+        }
+        #name, #email, #phone, #about {
+            margin: 10px 0;
+            color: #555;
+        }
+        #name {
+            font-size: 24px;
+            color: #333;
+        }
+        #email, #phone, #about {
+            font-size: 16px;
+        }
+        #img {
+            margin-bottom: 20px;
+        }
+
+    </Style>
+</head>
+<body>
+    <h1>Form Input Card</h1>
+    <form >
+        <input type="text" placeholder="Enter your name" required>
+        <input type="text" name="" placeholder="Enter image URL" required>
+        <input type="text" placeholder="Enter your email" required>
+        <input type="text" placeholder="Enter your phone number" required>
+        <input type="text" placeholder="about" required>
+        <button type="submit"> Submit </button>
+    </form>
+    <script src="index.js"></script>
+    
+</body>
+</html>

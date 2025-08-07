@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #392929;
+            font-family: Arial, sans-serif;
+        }
+        #fileInput {
+            display: none;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #89414a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #53373a;
+        }
+    </style>
+</head>
+<body>
+    <!-- <h1>Type any thing to see</h1>
+    <div>
+        <h1 id="text"></h1>
+    </div> -->
+    <input type="file" id="fileInput" />
+    <button id="btn"> Upload </button>
+    <script src="index.js"></script>
+</body>
+</html
