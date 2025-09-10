@@ -1,15 +1,16 @@
-import About from './components/About'
-import Contact from './components/Contact'
+import React from 'react'
 import './App.css'
+import Navbar from './components/Navbar.jsx'
+import './index.css'
 
 function App() {
 
 
   return (
     <>
-      {/* <About /> */}
-      <h1>Welcome to the App</h1>
-      <Contact />
+      <Navbar />
+      <h1>My React App</h1>
+
     </>
   )
 }

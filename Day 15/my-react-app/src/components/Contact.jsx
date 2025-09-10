@@ -1,14 +1,30 @@
 import { useState } from 'react';
 
 const Contact = () => {
-    const [data, setData] = useState('');
-    const [names, setName] = useState([]);
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [names, setNames] = useState([]);
+    const [errors, setErrors] = useState({});
+
+    const validate = () => {
+        const newErrors = {};
+        if (!name.trim()) newErrors.name = 'Name is required';
+        if (!email.trim()) newErrors.email = 'Email is required';
+        else if (!/\S+@\S+\.\S+/.test(email)) newErrors.email = 'Email is invalid';
+        return newErrors;
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(`your name is : ${data}`);
-        setName([...names, data]); // Add the new name to the list
-        setData(''); // Reset the input field after submission
+        const validationErrors = validate();
+        if (Object.keys(validationErrors).length > 0) {
+            setErrors(validationErrors);
+            return;
+        }
+        setNames([...names, name]);
+        setName('');
+        setEmail('');
+        setErrors({});
     };
 
     return (
@@ -20,19 +36,33 @@ const Contact = () => {
                     <input
                         type='text'
                         placeholder='Enter your name'
-                        value={data}
-                        onChange={(e) => setData(e.target.value)}
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
                     />
                 </label>
-                <button type='submit'>submit</button>
-                <h3>Your Name is :</h3>
-                <ul>
-                    {names.map((name, idx) => (
-                        <li key={idx}>{name}</li>
-                    ))}
-                </ul>
-                <p>Enter your name and click submit to see it listed above.</p>
+                {errors.name && <span style={{color: 'red'}}>{errors.name}</span>}
+                <br />
+                <label>
+                    Email:
+                    <input
+                        type='email'
+                        placeholder='Enter your email'
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                    />
+                </label>
+                {errors.email && <span style={{color: 'red'}}>{errors.email}</span>}
+                <br />
+                <button type='submit'>Submit</button>
             </form>
+            <h3>Your Names:</h3>
+            <ul>
+                {names.map((n, idx) => (
+                    <li key={idx}>{n}</li>
+                ))}
+            </ul>
+            <p>Enter your name and email, then click submit to see your name listed above.</p>
         </div>
     );
 };
